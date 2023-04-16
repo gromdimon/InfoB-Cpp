@@ -338,6 +338,32 @@ int pointers() {
 }
 
 
+void files() {
+    FILE *file = fopen("test.txt", "w");
+    // Alternative:
+    // FILE* fp;
+    // fp = fopen(&fp, "test.txt", "w");
+
+    if (file == NULL) {
+        cout << "Error open file" << endl;
+        return;
+    }
+    fprintf(file, "Hello, World!\n");
+    fclose(file);
+
+    file = fopen("test.txt", "r");
+    if (file == NULL) {
+        cout << "Error open file" << endl;
+        return;
+    }
+    char str[100];
+    while (fgets(str, 100, file) != NULL) {
+        cout << str;
+    }
+    fclose(file);
+}
+
+
 int main() {
     setlocale(LC_ALL, "English");
     cout << "Hello, World!" << endl;
@@ -386,7 +412,8 @@ int main() {
 //        }
 //    }
 
-    pointers();
+//    pointers();
+    files();
 
     return 0;
 }
