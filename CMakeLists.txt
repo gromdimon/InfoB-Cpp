@@ -3,4 +3,4 @@ project(cpp_infob)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cpp_infob first.cpp second.cpp train.cpp)
+add_executable(woche0/main.cpp)
